@@ -5,10 +5,8 @@ speaker = pyttsx3.init()
 
 for page_num in range(len(pdfreader.pages)):
     page = pdfreader.pages[page_num].extract_text()
-    text = page.strip().replace('\n', ' ')
-    print(text)
+    text = page.strip().replace('\n', ' ')    
 speaker.save_to_file(text, "output.mp3")
-    
 speaker.runAndWait()
 
 speaker.stop()
